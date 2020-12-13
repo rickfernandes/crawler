@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.1" />
-<title>red_points API documentation</title>
-<meta name="description" content="" />
+<title>crawler API documentation</title>
+<meta name="description" content="Crawler to get results from specific query from github.com …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,25 +19,27 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>red_points</code></h1>
+<h1 class="title">Module <code>crawler</code></h1>
 </header>
 <section id="section-intro">
+<p>Crawler to get results from specific query from github.com.</p>
+<p><strong>External modules</strong>: <code>requests</code>, <code>random</code>, <code>random</code>, <code>bs4</code>, <code>json</code></p>
+<p><code>Compatible with Python3.8 or higher</code></p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">import requests
-from random import randint
-from bs4 import BeautifulSoup
-import json
-
-&#34;&#34;&#34;
+<pre><code class="python">&#34;&#34;&#34;
 Crawler to get results from specific query from github.com.
 
 __External modules__: `requests`, `random`, `random`, `bs4`, `json`
 
 `Compatible with Python3.8 or higher`
 &#34;&#34;&#34;
+import requests
+from random import randint
+from bs4 import BeautifulSoup
+import json
 
 
 def get_random_proxy(*args):
@@ -284,7 +286,7 @@ if __name__ == &#39;__main__&#39;:
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="red_points.crawler"><code class="name flex">
+<dt id="crawler.crawler"><code class="name flex">
 <span>def <span class="ident">crawler</span></span>(<span>crawler_input)</span>
 </code></dt>
 <dd>
@@ -322,7 +324,7 @@ if __name__ == &#39;__main__&#39;:
         return json.dumps(urls,indent=1)</code></pre>
 </details>
 </dd>
-<dt id="red_points.get_random_proxy"><code class="name flex">
+<dt id="crawler.get_random_proxy"><code class="name flex">
 <span>def <span class="ident">get_random_proxy</span></span>(<span>*args)</span>
 </code></dt>
 <dd>
@@ -361,7 +363,7 @@ if __name__ == &#39;__main__&#39;:
         return http_proxies[n]</code></pre>
 </details>
 </dd>
-<dt id="red_points.get_repo_details"><code class="name flex">
+<dt id="crawler.get_repo_details"><code class="name flex">
 <span>def <span class="ident">get_repo_details</span></span>(<span>url, proxy)</span>
 </code></dt>
 <dd>
@@ -400,7 +402,7 @@ if __name__ == &#39;__main__&#39;:
         return {&#39;owner&#39;: owner, &#39;language_stats&#39;: language_stats }</code></pre>
 </details>
 </dd>
-<dt id="red_points.get_results_page"><code class="name flex">
+<dt id="crawler.get_results_page"><code class="name flex">
 <span>def <span class="ident">get_results_page</span></span>(<span>input_dict)</span>
 </code></dt>
 <dd>
@@ -434,7 +436,7 @@ if __name__ == &#39;__main__&#39;:
         return r.text</code></pre>
 </details>
 </dd>
-<dt id="red_points.get_urls"><code class="name flex">
+<dt id="crawler.get_urls"><code class="name flex">
 <span>def <span class="ident">get_urls</span></span>(<span>results_dict)</span>
 </code></dt>
 <dd>
@@ -466,7 +468,7 @@ if __name__ == &#39;__main__&#39;:
         return urls</code></pre>
 </details>
 </dd>
-<dt id="red_points.languages_parser"><code class="name flex">
+<dt id="crawler.languages_parser"><code class="name flex">
 <span>def <span class="ident">languages_parser</span></span>(<span>page)</span>
 </code></dt>
 <dd>
@@ -504,7 +506,7 @@ if __name__ == &#39;__main__&#39;:
         return language_stats</code></pre>
 </details>
 </dd>
-<dt id="red_points.memory_usage"><code class="name flex">
+<dt id="crawler.memory_usage"><code class="name flex">
 <span>def <span class="ident">memory_usage</span></span>(<span>method, args)</span>
 </code></dt>
 <dd>
@@ -542,7 +544,7 @@ if __name__ == &#39;__main__&#39;:
         tracemalloc.stop()</code></pre>
 </details>
 </dd>
-<dt id="red_points.parse_keywords"><code class="name flex">
+<dt id="crawler.parse_keywords"><code class="name flex">
 <span>def <span class="ident">parse_keywords</span></span>(<span>keywords)</span>
 </code></dt>
 <dd>
@@ -573,7 +575,7 @@ if __name__ == &#39;__main__&#39;:
         return q[0:-1]</code></pre>
 </details>
 </dd>
-<dt id="red_points.process_input"><code class="name flex">
+<dt id="crawler.process_input"><code class="name flex">
 <span>def <span class="ident">process_input</span></span>(<span>crawler_input)</span>
 </code></dt>
 <dd>
@@ -630,7 +632,7 @@ if __name__ == &#39;__main__&#39;:
         return input_dict</code></pre>
 </details>
 </dd>
-<dt id="red_points.results_parser"><code class="name flex">
+<dt id="crawler.results_parser"><code class="name flex">
 <span>def <span class="ident">results_parser</span></span>(<span>page)</span>
 </code></dt>
 <dd>
@@ -682,16 +684,16 @@ if __name__ == &#39;__main__&#39;:
 <ul id="index">
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="two-column">
-<li><code><a title="red_points.crawler" href="#red_points.crawler">crawler</a></code></li>
-<li><code><a title="red_points.get_random_proxy" href="#red_points.get_random_proxy">get_random_proxy</a></code></li>
-<li><code><a title="red_points.get_repo_details" href="#red_points.get_repo_details">get_repo_details</a></code></li>
-<li><code><a title="red_points.get_results_page" href="#red_points.get_results_page">get_results_page</a></code></li>
-<li><code><a title="red_points.get_urls" href="#red_points.get_urls">get_urls</a></code></li>
-<li><code><a title="red_points.languages_parser" href="#red_points.languages_parser">languages_parser</a></code></li>
-<li><code><a title="red_points.memory_usage" href="#red_points.memory_usage">memory_usage</a></code></li>
-<li><code><a title="red_points.parse_keywords" href="#red_points.parse_keywords">parse_keywords</a></code></li>
-<li><code><a title="red_points.process_input" href="#red_points.process_input">process_input</a></code></li>
-<li><code><a title="red_points.results_parser" href="#red_points.results_parser">results_parser</a></code></li>
+<li><code><a title="crawler.crawler" href="#crawler.crawler">crawler</a></code></li>
+<li><code><a title="crawler.get_random_proxy" href="#crawler.get_random_proxy">get_random_proxy</a></code></li>
+<li><code><a title="crawler.get_repo_details" href="#crawler.get_repo_details">get_repo_details</a></code></li>
+<li><code><a title="crawler.get_results_page" href="#crawler.get_results_page">get_results_page</a></code></li>
+<li><code><a title="crawler.get_urls" href="#crawler.get_urls">get_urls</a></code></li>
+<li><code><a title="crawler.languages_parser" href="#crawler.languages_parser">languages_parser</a></code></li>
+<li><code><a title="crawler.memory_usage" href="#crawler.memory_usage">memory_usage</a></code></li>
+<li><code><a title="crawler.parse_keywords" href="#crawler.parse_keywords">parse_keywords</a></code></li>
+<li><code><a title="crawler.process_input" href="#crawler.process_input">process_input</a></code></li>
+<li><code><a title="crawler.results_parser" href="#crawler.results_parser">results_parser</a></code></li>
 </ul>
 </li>
 </ul>

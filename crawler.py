@@ -1,8 +1,3 @@
-import requests
-from random import randint
-from bs4 import BeautifulSoup
-import json
-
 """
 Crawler to get results from specific query from github.com.
 
@@ -10,6 +5,10 @@ __External modules__: `requests`, `random`, `random`, `bs4`, `json`
 
 `Compatible with Python3.8 or higher`
 """
+import requests
+from random import randint
+from bs4 import BeautifulSoup
+import json
 
 
 def get_random_proxy(*args):
